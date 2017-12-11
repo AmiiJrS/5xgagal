@@ -26,12 +26,12 @@ helpMessage ="""
    ❁ A̴M̴I̴I̴ sᴇʟғʙᴏᴛ❁    
 ┗━━ೋ• ❄ •ೋ━━━┛
 🛡sᴇᴛᴛɪɴɢ ᴄᴍᴅ🛡
-✈[Url:on/off]
-✈[Autojoin:on/off]
-✈[Autocancel:on/off
-✈[Qr:on/off]
-✈[Autokick:on/off]
-✈[Contact:on/off]
+✈[Url: on/off]
+✈[Autojoin: on/off]
+✈[Autocancel: on/off
+✈[Qr: on/off]
+✈[Autokick: on/off]
+✈[Contact: on/off]
 ✈[Status]
 ♻️sᴛᴇᴀʟ ᴄᴍᴅ♻️
 ✈[Steal contact @{name}]
