@@ -15,15 +15,15 @@ from gtts import gTTS
 import urllib3
 
 cl = LINETCR.LINE()
-cl.login(qr=True)
-#cl.login(token='')
+cl.login(token="EnPqPA1Rcg83o27naIC1.TA54dxsS3sWfT1dVF7sUmq.G7j9VasepEbrLG6ar8N+ejqTMbLVHETvPBpQa9YwFRc=")
 cl.loginResult()
+
 print "===[Login Success]==="
 
 
 helpMessage ="""
 ┏━━ೋ• ❄ •ೋ━━━┓
-   ❁ ᴇxᴏʀᴄɪsᴛ sᴇʟғʙᴏᴛ❁    
+   ❁ A̴M̴I̴I̴ sᴇʟғʙᴏᴛ❁    
 ┗━━ೋ• ❄ •ೋ━━━┛
 🛡sᴇᴛᴛɪɴɢ ᴄᴍᴅ🛡
 ✈[Url:on/off]
@@ -451,7 +451,7 @@ def bot(op):
                 cl.sendMessage(msg)
 
 #--------------------------------------------------------
-            elif msg.text in ["Tag all","tagall","Tagall","Tag All"]:
+            elif msg.text in ["Tag all","Desah","Coli on","!!!"]:
               if msg.from_ in admin:
                 group = cl.getGroup(msg.to)
                 nama = [contact.mid for contact in group.members]
@@ -1572,12 +1572,15 @@ def bot(op):
 
 #--------------------------------------------------------
        #-------------Fungsi Speedbot Start---------------------#
-            elif msg.text in ["Speed","Sp"]:
-              if msg.from_ in owner:
+            elif msg.text in ["Sp","Speed","Desah"]:
                 start = time.time()
-                cl.sendText(msg.to, "Wait...")
+                print("Speed")
+                cl.sendText(msg.to, "Pᵉˡᵃⁿ-Pᵉˡᵃⁿ Sᵃʸᵃⁿᵍ...😃")
+                start = time.time()
+                time.sleep(0.02)
                 elapsed_time = time.time() - start
-                cl.sendText(msg.to, "%sDetik" % (elapsed_time))
+                cl.sendText(msg.to, "%sseconds" % (elapsed_time))  
+                cl.sendText(msg.to, "Tᵘʰ ᵏᵃᵃⁿ Cʳᵒᵗ ˢʸᵍ.. 😃")                                      
       #-------------Fungsi Speedbot Finish---------------------#
 
 #--------------------------------------------------------
