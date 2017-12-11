@@ -1458,7 +1458,7 @@ def bot(op):
                    cl.sendText(msg.to,"Mid:" +  key1)
 
             elif "/pancal " in msg.text:                  
-                       nk0 = msg.text.replace("Sikat ","    ")
+                       nk0 = msg.text.replace("/pancal ","    ")
                        nk1 = nk0.lstrip()
                        nk2 = nk1.replace("@","")
                        nk3 = nk2.rstrip()
@@ -2589,7 +2589,7 @@ def bot(op):
 			    G = random.choice(KAC).getGroup(op.param1)
 			    G.preventJoinByTicket = True
 			    random.choice(KAC).updateGroup(G)
-			    random.choice(KAK).kickoutFromGroup(op.param1,[op.param2])
+			    random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
 			except:
 			    pass
 		elif op.param2 not in admin + Bots:
