@@ -621,7 +621,7 @@ def bot(op):
                     cl.sendText(msg.to,"Update Bio" + string)
                     
 #-------------Fungsi Tag All Start---------------#
-            elif msg.text in ["Hello","Haii"]:
+            elif msg.text in ["Haii","!!!"]:
                 group = cl.getGroup(msg.to)
                 k = len(group.members)//500
                 for j in xrange(k+1):
