@@ -1798,13 +1798,13 @@ def bot(op):
             elif "#Bubar" in msg.text:
                 if msg.toType == 2:
                     print "ok"
-                    _name = msg.text.replace("Hobaaahhh","")
+                    _name = msg.text.replace("#Bubar","")
+                    gs = cl.getGroup(msg.to)
                     gs = ki.getGroup(msg.to)
                     gs = ki2.getGroup(msg.to)
-                    gs = ki3.getGroup(msg.to)
+                    cl.sendText(msg.to,"Cʳᵒᵗ")
                     ki.sendText(msg.to,"Cʳᵒᵗ")
-                    ki2.sendText(msg.to,"Cʳᵒᵗ")
-                    ki3.sendText(msg.to,"Bye All")
+                    ki2.sendText(msg.to,"Bye All")
                     targets = []
                     for g in gs.members:
                         if _name in g.displayName:
@@ -1816,7 +1816,7 @@ def bot(op):
                         for target in targets:
                           if not target in Bots:
                             try:
-                                klist=[cl,ki,ki2]
+                                klist=[ki,ki2]
                                 kicker=random.choice(klist)
                                 kicker.kickoutFromGroup(msg.to,[target])
                                 print (msg.to,[g.mid])
