@@ -3661,7 +3661,7 @@ def bot(op):
                         cl.sendImageWithURL(msg.to,cover)
 
 #===============================================
-            elif msg.text in ["debug speed","Debug speed"]:
+            elif msg.text in ["Sp"]:
               if msg.from_ in admin:
                 cl.sendText(msg.to, "Pᵉˡᵃⁿ-Pᵉˡᵃⁿ Sᵃʸᵃⁿᵍ...😃")
                 start = time.time()
