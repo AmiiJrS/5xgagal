@@ -10,7 +10,7 @@ from mergedict import ConfigDict
 from gtts import gTTS
 from pyowm import OWM
 from enum import Enum 
-from django.http import HttpResponse
+#from django.http import HttpResponse
 from flask import Flask, send_from_directory, redirect as redirect_flask, render_template
 from random import randint
 import time, random, sys, re, os, json
@@ -50,15 +50,15 @@ ks.login(token="En76eiS877UDyJYaYTLb.Cu584iN8cI2QN/belsU9sW.fTKNvsAzhWWz5kHG4EJw
 ks.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(qr=True)
+ki.login(token="EnFZh1VSv3Bnw5SEoMK8.PyUCDraJWT5sJzsDEiEZ2a.JHfHSgen9FgBWDAZXTOzz7DMn0QBkURzxq9QVeMOuNc=")
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(qr=True)
+kk.login(token="EnUnQkiIuDPBKpcZVjj6.qSMKZTpn3HbTnntbQ8035G.KCtO0IBrD5ZXhoweHz1CC4xAQXEVOwSuv9EeXgsgcsQ=")
 kk.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(qr=True)
+kc.login(token="Enl1jbYrxWNv5PDoQX74.MxZq5+cyaO1D5fsiaOaLra.f64MBlb40jybISZjXIT6o2tsNNXKV/OqYj0LIrj89fI=")
 kc.loginResult()
 
 print "Amii"
@@ -158,8 +158,8 @@ helpMessage= """\n
 |╬| Like friend:on/off
 |╬| Welcome message:on/off
 |╬| Auto notice:on/off
-|╬| Blockinvite:on/off
-|╬| Auto blockqr:on/off
+|╬| Denyinvites on/off
+|╬| Blockqr:on/off
 |╬| Namelock:on/off
 |╬| Auto add:on/off
 |╬| Check message
@@ -270,7 +270,6 @@ helpMessage= """\n
 |╬| apakah
 |╬| kerang ajaib
 |╬| Sticker [expression]
-|╬| Mention all
 ═╬════════►
    📣B̸͟͞R̸͟͞O̸͟͞A̸͟͞D̸͟͞C̸͟͞A̸͟͞S̸͟͞T̸͟͞📣
 ═╬════════►
@@ -361,9 +360,9 @@ autocancel = {}
 autoinvite = []
 autoleaveroom = []
 targets = []
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid]
-admin = ["u78e5efff85bf97393cc2c4b8ecf93d25","u2355fb85d6b43785e0b7770f956d0347"]
-owner = ["u78e5efff85bf97393cc2c4b8ecf93d25","u2355fb85d6b43785e0b7770f956d0347"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,"u78e5efff85bf97393cc2c4b8ecf93d25","ub5ae780d74acdd2c05b750ef7fb4ae31","u2355fb85d6b43785e0b7770f956d0347"]
+admin = ["u78e5efff85bf97393cc2c4b8ecf93d25","ub5ae780d74acdd2c05b750ef7fb4ae31","u2355fb85d6b43785e0b7770f956d0347"]
+owner = ["u78e5efff85bf97393cc2c4b8ecf93d25","ub5ae780d74acdd2c05b750ef7fb4ae31","u2355fb85d6b43785e0b7770f956d0347"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -4137,7 +4136,7 @@ def bot(op):
                     wait2['setTime'][msg.to] = datetime.now().strftime('%Y-%m-%d %H:%M')
                     wait2['ROM'][msg.to] = {}
                     print wait2
-            elif msg.text == "Lurking result":
+            elif msg.text == "Lurk":
               if msg.from_ in admin:
                     if msg.to in wait2['readPoint']:
                         if wait2["ROM"][msg.to].items() == []:
@@ -4581,7 +4580,7 @@ def bot(op):
                     #for _mid in gMembMids:
                         #random.choice(KAC).cancelGroupInvitation(msg.to,[_mid])
                     #cl.sendText(msg.to,"Clear boss!!!")
-            elif msg.text.lower() in ["mention all"]:
+            elif msg.text.lower() in ["!!!"]:
               if msg.from_ in admin:
                 group = cl.getGroup(msg.to)
                 nama = [contact.mid for contact in group.members]
