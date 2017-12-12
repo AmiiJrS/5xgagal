@@ -4580,65 +4580,21 @@ def bot(op):
                     #for _mid in gMembMids:
                         #random.choice(KAC).cancelGroupInvitation(msg.to,[_mid])
                     #cl.sendText(msg.to,"Clear boss!!!")
-            elif msg.text.lower() in ["!!!"]:
-              if msg.from_ in admin:
+            elif "!!!" in msg.text:
                 group = cl.getGroup(msg.to)
-                nama = [contact.mid for contact in group.members]
-                nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
-                if jml <= 100:
-                    summon(msg.to, nama)
-                    if jml > 100 and jml < 200:
-                        for i in range(0, 100):
-                            nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(101, len(nama)):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                if jml > 200 and jml < 300:
-                    for i in range(0, 100):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(101, 200):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(201, len(nama)):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                if jml > 300 and jml < 400:
-                    for i in range(0, 100):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(101, 200):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(201, 300):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                    for l in range(301, len(nama)):
-                        nm4 += [nama[l]]
-                    summon(msg.to, nm4)
-                if jml > 400 and jml < 500:
-                    for i in range(0, 100):
-                        nm1 += [nama[i]]
-                    summon(msg.to, nm1)
-                    for j in range(101, 200):
-                        nm2 += [nama[j]]
-                    summon(msg.to, nm2)
-                    for k in range(201, 300):
-                        nm3 += [nama[k]]
-                    summon(msg.to, nm3)
-                    for l in range(301, 400):
-                        nm4 += [nama[l]]
-                    summon(msg.to, nm4)
-                    for h in range(401, len(nama)):
-                        nm5 += [nama[h]]
-                    summon(msg.to, nm5)
-                if jml > 500:
-                    cl.sendText(msg.to,'Member melebihi batas.')
-                    cnt = Message()
-                    cnt.text = "Done : " + str(jml) +  " Members"
-                    cnt.to = msg.to
-                    cl.sendMessage(cnt)           
+                k = len(group.members)//500
+                for j in xrange(k+1):
+                    msg = Message(to=msg.to)
+                    txt = u''
+                    s=0
+                    d=[]
+                    for i in group.members[j*500 : (j+1)*500]:
+                        d.append({"S":str(s), "E" :str(s+8), "M":i.mid})
+                        s += 9
+                        txt += u'@Krampus\n'
+                    msg.text = txt
+                    msg.contentMetadata = {u'MENTION':json.dumps({"MENTIONEES":d})}
+                    cl.sendMessage(msg)
                       
 #===========================================
         if op.param3 == "1":
