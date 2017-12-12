@@ -3598,8 +3598,8 @@ def bot(op):
                 cl.sendImageWithURL(msg.to,wait["Pap"])
 
 #==≠============================================
-	    elif "Vn" in msg.text:
-                say = msg.text.replace("Vn","")
+	    elif "Vn " in msg.text:
+                say = msg.text.replace("Vn ","")
                 lang = 'id'
                 tts = gTTS(text=say, lang=lang)
                 tts.save("hasil.mp3")
@@ -3686,7 +3686,7 @@ def bot(op):
 		ks.sendText(msg.to, "%sCʳᵒᵗ" % (elapsed_time))  
 		kt.sendText(msg.to, "%sCʳᵒᵗ" % (elapsed_time))  
 #========================================
-            elif msg.text in ["My backup run"]:
+            elif msg.text in ["My backup"]:
                 if msg.from_ in admin:
                     wek = cl.getContact(mid)
                     a = wek.pictureStatus
@@ -4264,7 +4264,7 @@ def bot(op):
 						cl.sendText(manusia,(bctxt +"\n\n\nbroadcasted by:" + cl.getContact(msg.from_).displayName))
 										 
 #========================================
-            elif msg.text in ["Team @join"]:
+            elif msg.text in ["Masuk!"]:
               if msg.from_ in admin:
 					G = cl.getGroup(msg.to)
 					info = cl.getGroup(msg.to)
@@ -4304,7 +4304,7 @@ def bot(op):
 					ki.sendText(msg.to,"bye-bye")
 				else:
 					ki.sendText(msg.to,"He declined all invitations")
-            elif msg.text in ["Team @bye"]:
+            elif msg.text in ["Pulang!"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
                    X = cl.getGroup(msg.to)
